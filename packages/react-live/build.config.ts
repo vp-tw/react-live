@@ -1,5 +1,6 @@
 import type { BuildEntry } from "unbuild";
 import { defineBuildConfig } from "unbuild";
+import { build } from "esbuild";
 
 const entry = {
   builder: "mkdist",
@@ -13,14 +14,28 @@ const entry = {
 export default defineBuildConfig({
   clean: true,
   entries: [entry],
-  failOnWarn: false,
+  failOnWarn: true,
   externals: [
     "@astrojs/react",
     "@astrojs/starlight",
     "@docusaurus/core",
-    "@docusaurus/theme-live-codeblock",
     "react",
     "react-dom",
     "react-live",
   ],
+  hooks: {
+    async "build:done"(ctx) {
+      await build({
+        bundle: true,
+        entryPoints: ["src/docusaurus.tsx"],
+        format: "cjs",
+        outfile: "dist/docusaurus.cjs",
+        packages: "external",
+        platform: "node",
+      });
+      ctx.warnings.delete(
+        "Potential missing package.json files: dist/docusaurus.cjs",
+      );
+    },
+  },
 });

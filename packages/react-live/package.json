@@ -42,8 +42,8 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "unbuild && esbuild src/docusaurus.tsx --bundle --external:unplugin --format=cjs --platform=node --outfile=dist/docusaurus.cjs",
-    "test": "unbuild && esbuild src/docusaurus.tsx --bundle --external:unplugin --format=cjs --platform=node --outfile=dist/docusaurus.cjs && node --test test/*.test.mjs",
+    "build": "unbuild",
+    "test": "unbuild && node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
