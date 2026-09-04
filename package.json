@@ -13,7 +13,7 @@
     "build:pages": "corepack pnpm build && corepack pnpm build:examples && node scripts/build-pages.mjs",
     "check": "corepack pnpm typecheck && corepack pnpm test && corepack pnpm build:examples",
     "test": "corepack pnpm --filter @vp-tw/react-live test",
-    "typecheck": "corepack pnpm -r typecheck"
+    "typecheck": "corepack pnpm build && corepack pnpm -r typecheck"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^29.0.0",
