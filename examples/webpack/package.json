@@ -1,0 +1,1 @@
+{"name":"@example/webpack","private":true,"type":"module","scripts":{"build":"webpack --mode production","typecheck":"tsc --noEmit"},"dependencies":{"@vp-tw/react-live":"workspace:*","react":"^19.2.8","react-dom":"^19.2.8","react-live":"^4.1.8"},"devDependencies":{"html-webpack-plugin":"^5.6.8","ts-loader":"^9.6.2","webpack":"^5.110.3","webpack-cli":"^7.2.3"}}

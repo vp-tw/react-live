@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { transformLiveCode } from "../dist/react.mjs";
+import { transformLiveCode } from "../dist/react.js";
 
 for (const [name, source] of [
   ["named function", "export default function Demo() { return <p />; }"],

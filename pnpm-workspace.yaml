@@ -2,6 +2,15 @@ packages:
   - packages/*
   - examples/*
 
+overrides:
+  serialize-javascript: 7.1.1
+  sharp: 0.35.4
+
 allowBuilds:
   core-js: true
   esbuild: true
+  sharp: true
+
+minimumReleaseAgeExclude:
+  # Astro is the current version required by the latest Starlight peer range.
+  - astro@7.3.1

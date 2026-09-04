@@ -1,0 +1,1 @@
+{"name":"@example/rollup","private":true,"type":"module","scripts":{"build":"rollup -c && cp index.html dist/index.html","typecheck":"tsc --noEmit"},"dependencies":{"@vp-tw/react-live":"workspace:*","react":"^19.2.8","react-dom":"^19.2.8","react-live":"^4.1.8"},"devDependencies":{"@rollup/plugin-replace":"^6.0.3"}}

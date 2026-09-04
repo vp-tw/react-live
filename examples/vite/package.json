@@ -1,0 +1,1 @@
+{"name":"@example/vite","private":true,"type":"module","scripts":{"build":"vite build","typecheck":"tsc --noEmit"},"dependencies":{"@vp-tw/react-live":"workspace:*","react":"^18.3.1","react-dom":"^18.3.1","react-live":"^4.1.8"},"devDependencies":{"@vitejs/plugin-react":"^6.0.1","vite":"^8.2.2"}}

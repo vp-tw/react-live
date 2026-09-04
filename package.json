@@ -9,13 +9,26 @@
   },
   "scripts": {
     "build": "corepack pnpm --filter @vp-tw/react-live build",
-    "build:examples": "corepack pnpm --filter './examples/*' build",
+    "build:examples": "corepack pnpm --workspace-concurrency=1 --filter './examples/*' build",
+    "build:pages": "corepack pnpm build && corepack pnpm build:examples && node scripts/build-pages.mjs",
     "check": "corepack pnpm typecheck && corepack pnpm test && corepack pnpm build:examples",
     "test": "corepack pnpm --filter @vp-tw/react-live test",
-    "typecheck": "corepack pnpm -r typecheck"
+    "typecheck": "corepack pnpm build && corepack pnpm -r typecheck"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
     "@types/node": "^24.10.0",
-    "typescript": "npm:@typescript/typescript6@^6.0.2"
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-live": "^4.1.8",
+    "rolldown": "^1.2.7",
+    "rollup": "^4.63.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2"
   }
 }
