@@ -1,0 +1,72 @@
+{
+  "name": "@vp-tw/react-live",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Build editable React examples from real component source files.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./unplugin": {
+      "types": "./dist/unplugin.d.ts",
+      "import": "./dist/unplugin.mjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.mjs"
+    },
+    "./docusaurus": {
+      "types": "./dist/docusaurus.d.ts",
+      "import": "./dist/docusaurus.mjs"
+    },
+    "./starlight": {
+      "types": "./dist/starlight.d.ts",
+      "import": "./dist/starlight.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "unbuild",
+    "test": "unbuild && node --test test/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@babel/parser": "^8.0.4",
+    "@babel/standalone": "^8.0.4",
+    "@babel/traverse": "^8.0.4",
+    "unplugin": "^3.3.0"
+  },
+  "peerDependencies": {
+    "@astrojs/react": ">=4",
+    "@astrojs/starlight": ">=0.32",
+    "@docusaurus/core": ">=3",
+    "@docusaurus/theme-live-codeblock": ">=3",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "react-live": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@astrojs/react": { "optional": true },
+    "@astrojs/starlight": { "optional": true },
+    "@docusaurus/core": { "optional": true },
+    "@docusaurus/theme-live-codeblock": { "optional": true }
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@astrojs/react": "^6.0.5",
+    "@astrojs/starlight": "^0.42.0",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/theme-live-codeblock": "^3.10.2",
+    "@types/react": "^19.2.18",
+    "@types/babel__standalone": "^7.1.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-live": "^4.1.8",
+    "unbuild": "^3.6.1"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@vp-tw/react-live-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": "^22.22.1 || ^24.11.0 || >=26.0.0",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "build": "corepack pnpm --filter @vp-tw/react-live build",
+    "build:examples": "corepack pnpm --filter './examples/*' build",
+    "check": "corepack pnpm typecheck && corepack pnpm test && corepack pnpm build:examples",
+    "test": "corepack pnpm --filter @vp-tw/react-live test",
+    "typecheck": "corepack pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}
