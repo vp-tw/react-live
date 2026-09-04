@@ -6,13 +6,16 @@ integration. `pnpm build:pages` builds every project and assembles the output in
 
 | Directory | Coverage |
 | --- | --- |
-| `vite` | Vite adapter and React runtime |
+| `vite` | Vite adapter and React 18 runtime |
 | `rollup` | Direct Rollup adapter |
 | `webpack` | Webpack 5 adapter |
 | `rolldown` | Native Rolldown adapter |
 | `custom-renderer` | Custom generated-module renderer |
 | `docusaurus` | Docusaurus configuration plugin and SSR hydration |
 | `starlight` | Astro Starlight integration and hydrated React island |
+
+The remaining examples use React 19, so the examples exercise both supported
+React major versions.
 
 All example dependencies are workspace-local development fixtures. They are not
 additional published packages.
