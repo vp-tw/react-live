@@ -33,9 +33,14 @@ export default defineBuildConfig({
         packages: "external",
         platform: "node",
       });
-      ctx.warnings.delete(
-        "Potential missing package.json files: dist/docusaurus.cjs",
-      );
+      for (const warning of ctx.warnings) {
+        if (
+          warning.includes("Potential missing package.json files:") &&
+          warning.includes("dist/docusaurus.cjs")
+        ) {
+          ctx.warnings.delete(warning);
+        }
+      }
     },
   },
 });
