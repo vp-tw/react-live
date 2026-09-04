@@ -1,0 +1,1 @@
+import React from "react"; import {createRoot} from "react-dom/client"; import Demo from "./Demo.live"; createRoot(document.getElementById("root")!).render(<React.StrictMode><h1>Custom renderer</h1><Demo/></React.StrictMode>);

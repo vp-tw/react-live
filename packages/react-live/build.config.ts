@@ -1,15 +1,19 @@
+import type { BuildEntry } from "unbuild";
 import { defineBuildConfig } from "unbuild";
+
+const entry = {
+  builder: "mkdist",
+  declaration: true,
+  ext: "js",
+  format: "esm",
+  input: "src",
+  outDir: "dist",
+} satisfies BuildEntry;
 
 export default defineBuildConfig({
   clean: true,
-  declaration: true,
-  entries: [
-    "src/index",
-    "src/unplugin",
-    "src/react",
-    "src/docusaurus",
-    "src/starlight",
-  ],
+  entries: [entry],
+  failOnWarn: false,
   externals: [
     "@astrojs/react",
     "@astrojs/starlight",
@@ -19,5 +23,4 @@ export default defineBuildConfig({
     "react-dom",
     "react-live",
   ],
-  rollup: { emitCJS: false },
 });

@@ -9,30 +9,41 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./unplugin": {
       "types": "./dist/unplugin.d.ts",
-      "import": "./dist/unplugin.mjs"
+      "import": "./dist/unplugin.js",
+      "default": "./dist/unplugin.js"
     },
     "./react": {
       "types": "./dist/react.d.ts",
-      "import": "./dist/react.mjs"
+      "import": "./dist/react.js",
+      "default": "./dist/react.js"
     },
     "./docusaurus": {
       "types": "./dist/docusaurus.d.ts",
-      "import": "./dist/docusaurus.mjs"
+      "require": "./dist/docusaurus.cjs",
+      "import": "./dist/docusaurus.js",
+      "default": "./dist/docusaurus.js"
+    },
+    "./docusaurus/renderer": {
+      "types": "./dist/docusaurus-renderer.d.ts",
+      "import": "./dist/docusaurus-renderer.js",
+      "default": "./dist/docusaurus-renderer.js"
     },
     "./starlight": {
       "types": "./dist/starlight.d.ts",
-      "import": "./dist/starlight.mjs"
+      "import": "./dist/starlight.js",
+      "default": "./dist/starlight.js"
     },
     "./package.json": "./package.json"
   },
   "files": ["dist"],
   "scripts": {
-    "build": "unbuild",
-    "test": "unbuild && node --test test/*.test.mjs",
+    "build": "unbuild && esbuild src/docusaurus.tsx --bundle --external:unplugin --format=cjs --platform=node --outfile=dist/docusaurus.cjs",
+    "test": "unbuild && esbuild src/docusaurus.tsx --bundle --external:unplugin --format=cjs --platform=node --outfile=dist/docusaurus.cjs && node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
@@ -45,7 +56,6 @@
     "@astrojs/react": ">=4",
     "@astrojs/starlight": ">=0.32",
     "@docusaurus/core": ">=3",
-    "@docusaurus/theme-live-codeblock": ">=3",
     "react": ">=18",
     "react-dom": ">=18",
     "react-live": ">=4"
@@ -53,17 +63,16 @@
   "peerDependenciesMeta": {
     "@astrojs/react": { "optional": true },
     "@astrojs/starlight": { "optional": true },
-    "@docusaurus/core": { "optional": true },
-    "@docusaurus/theme-live-codeblock": { "optional": true }
+    "@docusaurus/core": { "optional": true }
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
     "@astrojs/react": "^6.0.5",
     "@astrojs/starlight": "^0.42.0",
     "@docusaurus/core": "^3.10.2",
-    "@docusaurus/theme-live-codeblock": "^3.10.2",
     "@types/react": "^19.2.18",
     "@types/babel__standalone": "^7.1.9",
+    "esbuild": "^0.28.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-live": "^4.1.8",

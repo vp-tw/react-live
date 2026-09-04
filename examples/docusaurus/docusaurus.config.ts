@@ -1,0 +1,2 @@
+import type {Config} from "@docusaurus/types"; import docusaurusReactLive from "@vp-tw/react-live/docusaurus";
+export default {title:"React Live · Docusaurus",url:"https://vp-tw.github.io",baseUrl:"/react-live/docusaurus/",favicon:"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%221em%22>⚛</text></svg>",organizationName:"vp-tw",projectName:"react-live",onBrokenLinks:"throw",presets:[["classic",{docs:{routeBasePath:"/",sidebarPath:false},blog:false}]],plugins:[docusaurusReactLive],themeConfig:{navbar:{title:"React Live",items:[]}}} satisfies Config;

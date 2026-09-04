@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@vp-tw/react-live examples</title>
+    <style>
+      :root { color-scheme: light dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      body { margin: 0; }
+      main { margin: auto; max-width: 72rem; padding: 4rem 1.5rem; }
+      h1 { font-size: clamp(2.4rem, 7vw, 5rem); letter-spacing: -.06em; margin: 0; }
+      .lead { color: #8b8b98; font-size: 1.2rem; max-width: 44rem; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: 3rem; }
+      a { border: 1px solid #7775; border-radius: 1rem; color: inherit; padding: 1.25rem; text-decoration: none; }
+      a:hover, a:focus-visible { border-color: #8b5cf6; outline: 2px solid #8b5cf666; transform: translateY(-2px); }
+      strong { display: block; font-size: 1.15rem; margin-bottom: .4rem; }
+      span { color: #8b8b98; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>REVIEW BUILD</p>
+      <h1>@vp-tw/react-live</h1>
+      <p class="lead">Editable React examples built from the same source files used by real applications and documentation.</p>
+      <div class="grid">
+        <a href="./vite/"><strong>Vite</strong><span>Vite 8 + React</span></a>
+        <a href="./rollup/"><strong>Rollup</strong><span>Direct Rollup integration</span></a>
+        <a href="./webpack/"><strong>Webpack</strong><span>Webpack 5 integration</span></a>
+        <a href="./rolldown/"><strong>Rolldown</strong><span>Native Rolldown adapter</span></a>
+        <a href="./custom-renderer/"><strong>Custom renderer</strong><span>Replace the default live UI</span></a>
+        <a href="./docusaurus/"><strong>Docusaurus</strong><span>Live component documentation</span></a>
+        <a href="./starlight/demo/"><strong>Astro Starlight</strong><span>Hydrated React island in MDX</span></a>
+      </div>
+    </main>
+  </body>
+</html>

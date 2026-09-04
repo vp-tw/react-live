@@ -3,7 +3,7 @@ import test from "node:test";
 import {
   analyzeLiveModule,
   compileLiveModule,
-} from "../dist/index.mjs";
+} from "../dist/index.js";
 
 test("collects runtime imports and excludes type-only bindings", () => {
   const source = `
